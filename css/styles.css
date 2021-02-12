@@ -69,14 +69,14 @@ ul {
 a {
   text-decoration: none;
 }
-img {
-  width: 100%;
-  display: block;
-}
-/* img:not(.nav-logo) {
+/* img {
   width: 100%;
   display: block;
 } */
+img:not(.nav-logo) {
+  width: 100%;
+  display: block;
+}
 
 h1,
 h2,
@@ -183,6 +183,115 @@ p {
 Navbar
 ===============
 */
+.navbar {
+  width: 100%;
+  background: var(--clr-white);
+  position: fixed;
+  z-index: 2;
+  box-shadow: var(--dark-shadow);
+}
+.nav-center {
+  max-width: 1170px;
+  /* padding: 1rem 2rem; */
+  margin: 0 auto;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-primary-1);
+  /* border: none; */
+  border: transparent;
+  background: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+.nav-icons {
+  /* position: absolute;
+  top: -50%;
+  left: -50%; */
+  display: none;
+}
+.nav-link {
+  color: var(--clr-grey-1);
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  font-weight: 1000;
+  padding: 1rem 2rem;
+  display: block;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-link:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-1);
+  padding-left: 2.25rem;
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+}
+@media screen and (min-width: 992px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    padding-left: 5rem;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .nav-icons {
+    margin: 0 auto;
+  }
+  .nav-icon {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--clr-primary-5);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+
 /*
 =============== 
 Hero
@@ -548,7 +657,6 @@ Footer
 .footer-links,
 .footer-icons {
   display: flex;
-
   justify-content: center;
   flex-wrap: wrap;
   margin: 2rem 2rem 2rem 2rem;
